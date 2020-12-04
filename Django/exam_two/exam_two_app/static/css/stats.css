@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 800px;
+    font-family: sans-serif;
+    margin-top: 20px; 
+}
+
+a:visited {
+    color: #145b99;
+}
+
+a {
+    color: #145b99;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+main {
+    padding: 25px;
+}
+
+h3 {
+    margin-bottom: 40px;
+}
+
+p {
+    margin-top: 20px; 
+}

@@ -1,0 +1,81 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    width: 800px;
+    margin: 40px;
+}
+
+#add-book {
+    width: 300px;
+}
+
+    #add-book h1 {
+        text-align: center;
+    }
+
+    #add-book p {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #add-book p label {
+        width: 80px;
+        margin: 0;
+    }
+
+    #add-book p input {
+        width: 206px;
+        height: 25px;
+        margin: 0;
+        border: 2px solid black;
+    }
+
+        #add-book input#text-box {
+            height: 65px;
+        }
+
+    #add-book button {
+        margin: 20px 0 0 82px;
+        background: white;
+        border: 2px solid black;
+        box-shadow: 1.5px 3px;
+    }
+
+table {
+    border: 2px solid black;
+    text-align: left;
+    width: 230px;
+}
+
+#book-table thead {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+#book-table th {
+    border-right: 2px solid black;
+    margin: 0;
+    padding: 0;
+    background: #cccccc;
+}
+
+#book-table tr {
+    margin: 0;
+    padding: 0;
+}
+
+#book-table td {
+    border-right: 2px solid black;
+    margin: 0;
+    padding: 0;
+    height: 24px;
+}

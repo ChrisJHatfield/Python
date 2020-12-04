@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/wishes.css' %}">
+    <title>The Wishing App</title>
+</head>
+<body>
+    <header>
+        <h1>Hello {{ user.first_name }}!</h1>
+        <div id="navbar">
+            <a href="/logout/user">Logout</a>
+            <a id="stats" href="/wishes/stats"><button>View stats</button></a>
+            <a href="/wishes/new"><button>Make a wish!</button></a>
+        </div>
+    </header>
+        <div id="wish_table">
+            <p>Your wish list:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th><th>Date added</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for wish in all_wishes %}
+                        {% if wish.granted_wish == 0 %}
+                            <tr>
+                                <td>{{ wish.item }}</td>
+                                <td>{{ wish.created_at|date:"M j Y" }}</td>
+                                <td><a href="wishes/remove/{{ wish.id }}">Remove</a>
+                                    |
+                                    <a href="wishes/edit/{{ wish.id }}">Edit</a>
+                                    |
+                                    <a href="wishes/granted/{{ wish.id }}">Granted!</a></td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="granted_table">
+            <p>Granted wishes:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th><th>Wisher</th><th>Date added</th><th>Date Granted</th><th>Likes</th><th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for wish in all_user_wishes %}
+                        {% if wish.granted_wish == 1 %}
+                            <tr>
+                                <td>{{ wish.item }}</td>
+                                <td>{{ wish.wish.first_name }}</td>
+                                <td>{{ wish.created_at|date:"M j Y" }}</td>
+                                <td>{{ wish.updated_at|date:"M j Y" }}</td>
+                                <td>{{ wish.users_who_liked.all|length }}</td>
+                                {% if wish.wish.id != request.session.uuid %}
+                                <td><a href="/wishes/liked/{{ wish.id }}">Like</a></td>
+                                {% else %}
+                                <td></td>
+                                {% endif %}
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    display: block;
+    font-family: sans-serif;
+    width: 800px;
+    margin: 40px;
+    font-family: sans-serif;
+}
+
+#content {
+    margin: 15px;
+}
+
+    #content h2 {
+        font-weight: lighter;
+    }
+
+    #content p {
+        margin-top: 10px;
+        height: 150px;
+    }
+
+    #content ul {
+        padding: 0;
+        margin-bottom: 30px;
+        list-style-position: inside;
+    }
+
+    #content ul li {
+        padding: 3px 0 0 15px;
+    }
+
+    #content select {
+        border: 2px solid black;
+        margin-right: 5px;
+    }
+
+    #content button {
+        background: white;
+        border: 2px solid black;
+        box-shadow: 1.5px 3px;
+    }

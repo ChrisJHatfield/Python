@@ -1,0 +1,55 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    width: 600px;
+    padding: 20px;
+}
+
+form {
+    margin: 0;
+}
+
+    p {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+        p label {
+            margin: 0;
+            width: 150px;
+        }
+
+        p input {
+            margin: 0;
+            width: 192px;
+            height: 25px;
+        }
+
+        p select {
+            margin: 0;
+            width: 200px;
+            height: 25px;
+        }
+    
+    #comment_field {
+        width: 545px;
+        margin: 10px 0;
+        border: 2px solid black;
+    }
+
+    form button {
+        float: right;
+        background-color: #76a5af;
+        box-shadow: 1px 2px black;
+        color: white;
+    }
+
+#survey {
+    border: 3px solid black;
+    padding: 20px;
+    height: 320px;
+    
+}

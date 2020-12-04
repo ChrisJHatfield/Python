@@ -1,0 +1,79 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 960px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+    header {
+        display: flex;
+        justify-content: flex-start;
+        margin: 20px;
+    }
+
+        header h1 {
+            margin: 0 10px 0 0;
+            font-size: 20pt;
+        }
+
+        header p {
+            border: 1px solid black;
+            margin: 0;
+            width: 200px;
+            height: 30px;
+            font-size: 15pt;
+            padding: 3px 0 0 3px;
+        }
+
+    .gold_containers {
+        width: 180px;
+        height: 130px;
+        
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    .gold_containers form {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        margin: 0;
+    }
+
+        .gold_containers h2 {
+            margin-bottom: 20px;
+        }
+
+        .gold_containers p {
+            margin-bottom: 20px;
+        }
+
+        .gold_containers button {
+            background-color: white;
+            border-color: 1px solid black;
+        }
+
+    footer {
+        margin: 20px 0 0 20px;
+    }
+
+        footer p {
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+
+        #activities_log {
+            width: 915px;
+            height: 300px;
+            border: 2px solid black;
+            overflow: scroll;
+            padding-top: 10px;
+        }

@@ -1,0 +1,36 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 960px;
+    display: block;
+    padding: 40px;
+    font-family: sans-serif;
+}
+
+#title {
+    font-size: 14pt;
+    border: 3px solid black;
+    text-align: center;
+    width: 220px;
+    height: 40px;
+    padding: 5px 10px;
+}
+
+#clock-box {
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 600px;
+    height: 120px;
+}
+
+    #clock-box p {
+        font-size: 30pt;
+        width: 250px;
+        text-align: center;
+        padding-top: 5px;
+    }

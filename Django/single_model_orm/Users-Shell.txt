@@ -1,0 +1,29 @@
+Error: Class has no objects member python linting: https://www.youtube.com/watch?v=a4zsoBNBBvE
+
+python manage.py makemigrations
+python manage.py migrate
+---------------------------------
+python manage.py shell
+
+from users_app.models import *
+
+User.objects.create(first_name="Chris",last_name="Hatfield",email_address="msn@aol.com",age=24)
+User.objects.create(first_name='Sponge',last_name='Bob',email_address='bikinis@bottom',age=200)
+User.objects.create(first_name='Clifford',last_name='Big_Red_Dog',email_address='theoriginalbigreddog@dog.com',age=8)
+
+User.objects.all()
+
+User.objects.last()
+
+User.objects.first()
+
+u = User.objects.get(id=3)
+u.last_name = 'Pancakes'
+u.save()
+
+u = User.objects.get(id=2)
+u.delete()
+
+User.objects.all().order_by("first_name") (ascending)
+
+User.objects.all().order_by("-first_name") (descending)

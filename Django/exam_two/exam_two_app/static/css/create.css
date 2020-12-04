@@ -1,0 +1,93 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.messages {
+    background: #fefac0;
+    border: 2px solid black;
+    width: 300px;
+    padding: 5px 0 5px 30px;
+    margin-bottom: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+h1 {
+    margin: 0 0 100px 0;
+}
+
+a:visited {
+    color: #145b99;
+}
+
+a {
+    color: #145b99;
+}
+
+#wish {
+    margin-left: 20px;
+    border: 3px solid black;
+    width: 40%;
+}
+
+#wish form {
+    padding: 15px 0 3px 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+form p {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+
+form label {
+    padding-right: 3px;
+    margin-right: 5px;
+    width: 75px;
+}
+
+form input {
+    border: 2px solid black;
+    height: 25px;
+    width: 150px;
+    margin: 0;
+}
+
+#buttons {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 70px;
+}
+
+#cancel {
+    background: white;
+    box-shadow: 1px 2px;
+    width: 80px;
+    font-size: 18px;
+}
+
+button {
+    background: white;
+    border: 2px solid black;
+    box-shadow: 1px 2px;
+    height: 25px;
+    width: 80px;
+    margin-left: 10px;
+    font-size: 18px;
+}

@@ -1,0 +1,35 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 800px;
+    margin: 40px;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin-left: 0;
+}
+
+header a {
+    margin-right: 0;
+}
+
+#show-info {
+    margin: 20px 0 150px 0;
+}
+
+#show-info p {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-bottom: 15px;
+}

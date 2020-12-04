@@ -1,0 +1,32 @@
+* {
+    margin: 0 auto;
+    border: 1px dotted black;
+}
+
+body {
+    margin-top: 200px;
+    font-family: sans-serif;
+    display: flex;
+
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 32pt;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 14pt;
+}
+
+button {
+    background-color: coral;
+    width: 60px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12pt;
+    border-radius: 6px;
+    border-color: brown;
+}

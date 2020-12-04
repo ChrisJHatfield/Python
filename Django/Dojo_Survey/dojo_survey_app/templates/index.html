@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Survey Page</title>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+
+</head>
+<body>
+    <div id="survey">
+        <form action="/result" method="POST">
+            {% csrf_token %}
+            <p>
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="">
+                <br>
+                <br>
+            </p>
+            <p>
+                <label for="location">Dojo Location:</label>
+                <select name="location" id="" required>
+                    <option value="Silicon Valley">Silicon Valley</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Burbank">Burbank</option>
+                    <option value="Boise">Boise</option>
+                </select>
+                <br>
+                <br>
+            </p>
+            <p>
+                <label for="language">Favorite Language:</label>
+                <select name="language" id="">
+                    <option value="C#">.NET/C#</option>
+                    <option value="Ruby_on_Rails">Ruby on Rails</option>
+                    <option value="Python">Python</option>
+                    <option value="MEAN">MEAN</option>
+                    <option value="Java">Java</option>
+                </select>
+                <br>
+                <br>
+            </p>
+            <p>
+                <label for="comment">Comment (optional):</label>
+            </p>
+            <textarea name="comment" id="comment_field" cols="30" rows="10"></textarea>
+            <br>
+            <button type="submit">Button</button>
+            <br>
+            <br>
+        </form>
+        
+    </div>
+</body>
+</html>

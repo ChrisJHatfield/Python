@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+    <title>The Wishing App</title>
+</head>
+<body>
+    <header>
+        <h1>Hello {{ user.first_name }}! Make a wish!</h1>
+            <a href="/logout/user">Logout</a>
+    </header>
+    <div id="wish">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/wishes/add" method="post">
+            {% csrf_token %}
+            <p>
+                <label>I wish for: </label>
+                <input type="text" name="wish_item">
+            </p>
+            <p>
+                <label>Description</label>
+                <input type="text" name="wish_description">
+            </p>
+            <div id="buttons">
+                <input id="cancel" type="submit" name="cancel" value="Cancel">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

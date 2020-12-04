@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Favorite Books</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{ user_in_session.first_name }}!</h1>
+        <a href="/logout/user">Log Out</a>
+    </header>
+    <div id="container">
+        <div id="add_favorite_book">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <h1>Add a Favorite Book</h1>
+            <form action="/books/add" method="post">
+                {% csrf_token %}
+                <p>
+                    <label>Title</label>
+                    <input type="text" name="book_title">
+                </p>
+                <p>
+                    <label>Description</label>
+                    <input type="text" name="book_description">
+                </p>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div id="book_list">
+            <h1>All Books</h1>
+            { for loop here }
+            <a href="">{book.title}</a>
+            <p>added by {book.books_uploaded.first_name} {book.books_uploaded.last_name}</p>
+            { if statement about favorite book here}
+                <p>this is one of your favorites</p>
+            { else statement about not favorite book here }
+                <a href="">Add to Favorites</a>
+            { endif}
+        </div>
+    </div>
+</body>
+</html>

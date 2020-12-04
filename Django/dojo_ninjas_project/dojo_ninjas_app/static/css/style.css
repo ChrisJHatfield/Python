@@ -1,0 +1,125 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    padding: 20px;
+    width: 800px;
+    font-family: sans-serif;
+}
+
+#signup {
+    display: flex;
+    justify-content: space-around;
+}
+
+#add-dojo {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+}
+
+    #add-dojo form {
+        width: 240px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #add-dojo h1 {
+        font-weight: lighter;
+        text-align: center;
+        margin: 5px;
+    }
+
+    #add-dojo p {
+        margin: 7px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+        #add-dojo label {
+            margin: 0;
+        }
+
+        #add-dojo input {
+            width: 132px;
+            margin: 0;
+            border: 2px solid black;
+        }
+
+        #add-dojo button {
+            margin-top: 7px;
+            background-color: white;
+            border: 1px solid black;
+            box-shadow: 1.5px 3px;
+        }
+
+#add-ninja {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+}
+
+#add-ninja h1 {
+    font-weight: lighter;
+    text-align: center;
+    margin: 5px;
+}
+
+    #add-ninja p {
+        margin: 7px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    #add-ninja form {
+        width: 240px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+        #add-ninja label {
+            margin: 0;
+        }
+
+        #add-ninja input {
+            width: 132px;
+            margin: 0;
+            border: 2px solid black;
+        }
+
+        #add-ninja select {
+            width: 139px;
+            margin: 0;
+            border: 2px solid black;
+        }
+
+        #add-ninja button {
+            margin-top: 7px;
+            background-color: white;
+            border: 1px solid black;
+            box-shadow: 1.5px 3px;
+        }
+
+#dojo-list {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border-top: 3px solid black;
+    padding: 10px;
+}
+
+#dojo-list h1 {
+    font-weight: lighter;
+    text-align: center;
+    margin: 5px 0 15px 0;
+}
+
+    #dojo-names {
+        list-style-type: none;
+    }

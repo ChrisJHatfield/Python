@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="results_box">
+        <h1>Submitted Info</h1>
+        <div id="results">
+            <p>
+                <label for="Name:">Name:</label>
+                {{ name }}
+            </p>
+            <p> 
+                <label for="Dojo Location:">Dojo Location:</label>
+                {{ location }}
+            </p>
+            <p> 
+                <label for="Favorite Language:">Favorite Language:</label>
+                {{ language }}!!!
+            </p>
+            <p> 
+                <label for="Comment:">Comment:</label>
+                {{ comment }}
+            </p>
+        </div>
+        <a href="/">
+            <button>Go Back</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    {% if request.session.user_result == "Too high!" %}
+    <div class="red">
+        <p>Too High!</p>
+        <p>Your guess: {{ request.session.your_guess }}</p>
+    </div>
+    <form action="/submitted" method="post">
+        {% csrf_token %}
+        <input id="your_guess" type="text" name="your_guess" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+    {% if request.session.user_result == "Too low!" %}
+    <div class="red">
+        <p>Too Low!</p>
+        <p>Your guess: {{ request.session.your_guess }}</p>
+    </div>
+    <form action="/submitted" method="post">
+        {% csrf_token %}
+        <input id="your_guess" type="text" name="your_guess" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+    {% if request.session.user_result == "Same!" %}
+    <div id="green">
+        <p>{{ request.session.your_guess}} was the number!</p>
+        <form action="/reset" method="post">
+            {% csrf_token %}
+            <button type="submit">Play Again!</button>
+        </form>
+    </div>
+    <p>It took you: {{ request.session.session_counter }} guesses!</p>
+    {% endif %}
+    {% if request.session.user_result == "You lose!" %}
+    <div class="red">
+        <p>You lose!</p>
+        <form action="/reset" method="post">
+            {% csrf_token %}
+            <button type="submit">Play Again!</button>
+        </form>
+    </div>
+    <p>You took the max amount of guesses: {{ request.session.session_counter }}</p>
+    {% endif %}
+    {% if request.session.session_counter == 0 %}
+    <form action="/submitted" method="post">
+        {% csrf_token %}
+        <input id="your_guess" type="text" name="your_guess" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+</body>
+</html>

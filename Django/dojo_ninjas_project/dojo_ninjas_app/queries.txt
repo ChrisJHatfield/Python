@@ -1,0 +1,28 @@
+from dojo_ninjas_app.models import Dojo, Ninjas
+Dojo.objects.create(name="Python",city="Burbank",state="CA")
+Dojo.objects.create(name="C#",city="Orange County",state="CA")
+Dojo.objects.create(name="Javascript",city="Boise",state="ID")
+
+d = Dojo.objects.all()
+d.delete()
+
+Dojo.objects.create(name="Python",city="Burbank",state="CA")
+Dojo.objects.create(name="C#",city="Orange County",state="CA")
+Dojo.objects.create(name="Javascript",city="Boise",state="ID")
+
+Ninjas.objects.create(dojo=Dojo.objects.get(id=4),first_name="Chris",last_name="Hatfield")
+Ninjas.objects.create(dojo=Dojo.objects.get(id=4),first_name="Jackie",last_name="Hatfield")
+Ninjas.objects.create(dojo=Dojo.objects.get(id=4),first_name="Josh",last_name="Hatfield")
+
+Ninjas.objects.create(dojo=Dojo.objects.get(id=5),first_name="Jed",last_name="McCoy")
+Ninjas.objects.create(dojo=Dojo.objects.get(id=5),first_name="Jud",last_name="McCoy")
+Ninjas.objects.create(dojo=Dojo.objects.get(id=5),first_name="John",last_name="McCoy")
+
+Ninjas.objects.create(dojo=Dojo.objects.get(id=6),first_name="Raphael",last_name="Turtle")
+Ninjas.objects.create(dojo=Dojo.objects.get(id=6),first_name="Donatello",last_name="Turtle")
+Ninjas.objects.create(dojo=Dojo.objects.get(id=6),first_name="Michelangelo",last_name="Turtle")
+
+Dojo.objects.first()
+Dojo.objects.last()
+
+Dojo.objects.create(name="MERN",city="San Jose",state="CA",description="new dojo")

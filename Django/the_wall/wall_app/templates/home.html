@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <title>Wall Login & Registration</title>
+</head>
+<body>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <div id="container">
+        <div id="registration">
+            <h1>Registration</h1>
+            <form action="register/new-user" method="post">
+                {% csrf_token %}
+                <p>
+                    <label>First Name</label>
+                    <input type="text" name="register_first_name">
+                </p>
+                <p>
+                    <label>Last Name</label>
+                    <input type="text" name="register_last_name">
+                </p>
+                <p>
+                    <label>Email</label>
+                    <input type="email" name="register_email">
+                </p>
+                <p>
+                    <label>Password</label>
+                    <input type="password" name="register_password">
+                </p>
+                <p>
+                    <label>Confirm PW</label>
+                    <input type="password" name="register_confirm_password">
+                </p>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div id="login">
+            <h1>Login</h1>
+            <form action="login/user" method="post">
+                {% csrf_token %}
+                <p>
+                    <label>Email</label>
+                    <input type="email" name="login_email">
+                </p>
+                <p>
+                    <label>Password</label>
+                    <input type="password" name="login_password">
+                </p>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

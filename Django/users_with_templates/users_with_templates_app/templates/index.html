@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>C+R Users</title>
+</head>
+<body>
+    <div id="users">
+        <h1>All The Users</h1>
+        <table>
+            <tbody>
+                <tr id="title">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            {% for user in all_the_users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name}} {{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.age }}</td>
+                </tr>    
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="add-users">
+        <h1>Add a User</h1>
+        <form action="/register" method="post">
+            {% csrf_token %}
+            <div id="user-form">
+                <p>
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name">
+                </p>
+                <p>
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name">
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+                </p>
+                <p>
+                    <label for="age">Age</label>
+                    <input type="text" name="age">
+                </p>
+            </div>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</body>
+</html>
